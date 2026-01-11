@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 2%;    /* Deeper black #050505 */
+    --foreground: 0 0% 98%;      /* Soft white */
+
+    --card: 240 6% 5%;           /* Charcoal #0d0d0f */
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 6% 5%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 84% 44%;        /* Crimson red #cc1414 */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 4% 12%;
+    --secondary-foreground: 0 0% 90%;
+
+    --muted: 240 4% 12%;
+    --muted-foreground: 240 5% 60%;
+
+    --accent: 0 84% 44%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 6% 12%;
+    --input: 240 6% 12%;
+    --ring: 0 84% 44%;
+
+    --radius: 1rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-white/5;
+  }
+  body {
+    background: radial-gradient(circle at 50% 0%, #1a0505 0%, #050505 100%);
+    color: hsl(var(--foreground));
+    font-feature-settings: "rlig" 1, "calt" 1;
+    @apply antialiased min-h-screen overflow-x-hidden;
+  }
+}
+
+.glass {
+  @apply bg-white/[0.03] backdrop-blur-xl border border-white/[0.05];
+}
+
+.glass-dark {
+  @apply bg-black/40 backdrop-blur-2xl border border-white/[0.02];
+}
+
+.premium-card {
+  @apply glass shadow-2xl transition-all duration-300;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+}
+
+.crimson-glow {
+  box-shadow: 0 0 20px rgba(204, 20, 20, 0.2);
+}
+
+.crimson-glow-strong {
+  box-shadow: 0 0 30px rgba(204, 20, 20, 0.4);
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-b from-white to-white/60;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes pulse-red {
+  0% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 0.5; }
+}
+
+.animate-pulse-red {
+  animation: pulse-red 2s infinite ease-in-out;
+}

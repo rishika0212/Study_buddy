@@ -1,0 +1,42 @@
+{
+  "location": "eastus",
+  "properties": {
+    "configuration": {
+      "ingress": {
+        "external": true,
+        "targetPort": 80,
+        "allowInsecure": false
+      }
+    },
+    "template": {
+      "containers": [
+        {
+          "name": "frontend",
+          "image": "studdybuddyacr.azurecr.io/frontend:latest",
+          "resources": {
+            "cpu": 0.5,
+            "memory": "1Gi"
+          }
+        },
+        {
+          "name": "backend",
+          "image": "studdybuddyacr.azurecr.io/backend:latest",
+          "resources": {
+            "cpu": 0.5,
+            "memory": "1Gi"
+          },
+          "env": [
+            {
+              "name": "OLLAMA_BASE_URL",
+              "value": "http://ollama:11434"
+            }
+          ]
+        }
+      ],
+      "scale": {
+        "minReplicas": 1,
+        "maxReplicas": 3
+      }
+    }
+  }
+}

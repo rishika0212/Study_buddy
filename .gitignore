@@ -1,0 +1,121 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Virtual environments
+venv/
+env/
+.env
+.venv/
+ENV/
+
+# IDE and editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Build outputs
+dist/
+build/
+*.egg-info/
+*.egg
+.eggs/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Testing
+.coverage
+htmlcov/
+.tox/
+.nox/
+.pytest_cache/
+coverage.xml
+*.cover
+
+# Data and database files
+data/
+*.sqlite3
+*.db
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Docker
+.docker/
+
+# Python specific
+*.so
+.Python
+develop-eggs/
+downloads/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.manifest
+*.spec
+
+# Frontend specific
+frontend/node_modules/
+frontend/dist/
+frontend/.cache/
+
+# Backend specific
+backend/__pycache__/
+backend/data/
+backend/app/__pycache__/
+backend/app/**/__pycache__/
+
+# ChromaDB data
+chroma/
+*.chroma
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+temp_notes.txt
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Azure
+*.publishsettings
+
+# Secrets
+secrets/
+*.pem
+*.key
