@@ -98,7 +98,7 @@ class AssessmentService:
         # Try up to 3 times with increasingly simple prompts
         for attempt in range(3):
             try:
-                from langchain.prompts import PromptTemplate
+                from langchain_core.prompts import PromptTemplate
                 
                 # Use quality-focused model for generation
                 llm = get_ollama_client(task_type="mcq_generation")
@@ -374,7 +374,7 @@ Return ONLY valid JSON (no markdown, no explanation):
         is_correct_match = user_answer.strip().upper() == correct_answer.strip().upper()
         
         try:
-            from langchain.prompts import PromptTemplate
+            from langchain_core.prompts import PromptTemplate
             
             # Use fast model for MCQ evaluation
             llm = get_ollama_client(task_type="mcq_eval", temperature=0.0)
@@ -449,7 +449,7 @@ Return ONLY valid JSON (no markdown, no explanation):
         context = retrieve_context(topic)
         
         try:
-            from langchain.prompts import PromptTemplate
+            from langchain_core.prompts import PromptTemplate
             
             # Use quality-focused model for generation
             llm = get_ollama_client(task_type="qna_generation")
@@ -607,7 +607,7 @@ Return ONLY valid JSON (no markdown, no explanation):
     async def evaluate_qna(self, topic: str, question: str, user_answer: str, length: str = "medium") -> Dict[str, Any]:
         context = retrieve_context(topic)
         try:
-            from langchain.prompts import PromptTemplate
+            from langchain_core.prompts import PromptTemplate
             
             # Use balanced model for QnA evaluation
             llm = get_ollama_client(task_type="qna_eval", temperature=0.3)

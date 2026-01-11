@@ -1,4 +1,3 @@
-from langchain.memory import ConversationSummaryMemory
 from backend.app.llm.ollama_client import get_ollama_client
 from backend.app.config import settings
 import os

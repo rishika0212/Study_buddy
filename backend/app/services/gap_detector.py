@@ -19,7 +19,7 @@ class GapDetector:
         try:
             profile = UserProfile(user_id)
             
-            from langchain.prompts import PromptTemplate
+            from langchain_core.prompts import PromptTemplate
             prompt_template = PromptTemplate.from_template(GAP_DETECTION_PROMPT)
             prompt = prompt_template.format(input=user_input, output=ai_output)
             

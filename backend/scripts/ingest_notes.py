@@ -4,7 +4,7 @@ import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from langchain_community.document_loaders import TextLoader, DirectoryLoader
-from langchain.text_splitter import CharacterTextSplitter
+from langchain_text_splitters import CharacterTextSplitter
 from backend.app.vectorstore.chroma_client import get_chroma_client
 from backend.app.utils.logger import logger
 

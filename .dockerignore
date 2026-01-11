@@ -1,0 +1,98 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+
+# IDEs and editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Frontend build artifacts (if building separately)
+frontend/dist/
+frontend/build/
+
+# Logs
+logs/
+*.log
+
+# Local data (not needed in container)
+data/
+backend/data/
+
+# Documentation
+docs/
+*.md
+!README.md
+
+# Docker
+Dockerfile
+Dockerfile.*
+docker-compose*.yml
+.docker/
+
+# Azure deployment files
+azure/
+
+# Scripts (development only)
+scripts/
+
+# Environment files
+.env
+.env.*
+*.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test files
+tests/
+test/
+*_test.py
+test_*.py
