@@ -236,7 +236,7 @@ async def generic_exception_handler(request: Request, exc: Exception):
         user_action=f"{request.method} {request.url.path}"
     )
     
-    if not 'error_id' in response.content:
+    if not 'error_id' in json.loads(response.content):
         response.content['error_id'] = error_id
     return JSONResponse(
         status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
@@ -245,6 +245,7 @@ async def generic_exception_handler(request: Request, exc: Exception):
             "message": "Something went wrong. Please try again.",
             "error_code": "INTERNAL_ERROR"
         }
+
     )
 
 
