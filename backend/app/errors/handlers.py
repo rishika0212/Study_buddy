@@ -86,17 +86,15 @@ async def missing_context_handler(request: Request, exc: MissingContextError):
     
     return JSONResponse(
         status_code=status.HTTP_400_BAD_REQUEST,
+```
         content={
             "error_id": exc.error_id,
             "error_code": exc.error_code,
             "message": "Missing required context",
             "required_fields": exc.required_fields,
-            "details": exc.to_dict()
+            "detail": str(exc.to_dict()),  # added closing quote
         }
-    )
-
-
-async def assessment_interruption_handler(request: Request, exc: AssessmentInterruptionError):
+    })
     """Handle incomplete assessment sessions."""
     log_error(
         exc,
